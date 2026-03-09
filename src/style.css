@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  background-color: rgb(233, 232, 232);
+  padding: 10px;
+}
+
+#container, #content {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+}
+
+nav > button {
+    background-color: #4169E1;
+    padding: 15px;
+    width: 100px;
+    color: white; 
+    font-size: 15px;   
+    border: none;
+    border-radius: 10px;
+}
+
+nav > button:hover {
+    scale: 1.04;
+}
+
+.attribution {
+    font-size: 10px;
+    > {
+        display: inline;
+    }
+}
+
+img {
+    width: 450px;
+    height: 350px;
+}
+
+.headline {
+    font-style: italic;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 700;
+}
+.card {
+    display: grid;
+    align-items: center;
+    max-width: fit-content;
+    padding: 20px;
+    margin: 20px;
+    gap: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    grid-template-columns: 150px 300px;
+
+    > :nth-child(1){
+        font-size: 20px;
+        grid-column: span 2;
+    }
+
+    > :nth-child(2){
+        font-size: 15px;
+        grid-column: span 2;
+    }
+
+    img {
+        width: 250px;
+        height: 200px;
+    }
+}
+
+.menu-heading {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 30px;
+}
