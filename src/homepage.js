@@ -5,6 +5,7 @@ export default function() {
 
     const heading = document.createElement("h1");
     heading.textContent = "Golden Ember Kitchen";
+    heading.classList.add("imperial-script-regular");
 
     const headline = document.createElement("h3");
     headline.classList.add("headline");
@@ -23,14 +24,14 @@ export default function() {
     attribution.classList.add("attribution");
 
     const artistOfRestaurantImg = document.createElement("a");
-    artistOfRestaurantImg.textContent = "Jason Leung";
-    artistOfRestaurantImg.href = "https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
+    artistOfRestaurantImg.textContent = "Edu";
+    artistOfRestaurantImg.href = "https://unsplash.com/@shotbyedu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
     artistOfRestaurantImg.target = "_blank";
     artistOfRestaurantImg.rel = "noopener noreferrer";
-
+      
     const resourceSiteOfRestaurantImg = document.createElement("a");
     resourceSiteOfRestaurantImg.textContent = "Unsplash";
-    resourceSiteOfRestaurantImg.href = "https://unsplash.com/photos/photo-of-pub-set-in-room-during-daytime-poI7DelFiVA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
+    resourceSiteOfRestaurantImg.href = "https://unsplash.com/photos/a-romantic-table-is-set-for-dinner-HfhKGuiIt5Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText";
     resourceSiteOfRestaurantImg.target = "_blank";
     resourceSiteOfRestaurantImg.rel = "noopener noreferrer";
 

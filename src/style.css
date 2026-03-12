@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Skranji:wght@400;700&display=swap');
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -6,31 +7,51 @@
     padding: 0;
 }
 
-body {
-  font-family: Roboto, sans-serif;
-  background-color: rgb(233, 232, 232);
-  padding: 10px;
+.imperial-script-regular {
+  font-family: "Imperial Script", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
-#container, #content {
+body {
+  font-family: Roboto, sans-serif;
+  background-image: linear-gradient(90deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  height: 100%;
+}
+
+#container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+#content {
     display: grid;
     gap: 20px;
     justify-items: center;
     justify-content: center;
+    grid-template-columns: 60vw;
+
 }
 
-nav > button {
-    background-color: #4169E1;
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav > div {
     padding: 15px;
-    width: 100px;
-    color: white; 
-    font-size: 15px;   
-    border: none;
-    border-radius: 10px;
+    font-size: 20px;   
 }
 
-nav > button:hover {
-    scale: 1.04;
+nav > div:hover {
+    scale: 1.1;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
 }
 
 .attribution {
@@ -41,8 +62,8 @@ nav > button:hover {
 }
 
 img {
-    width: 450px;
-    height: 350px;
+    max-width: 100%;
+    height: 400px;
 }
 
 .headline {
@@ -50,19 +71,20 @@ img {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 80px;
     font-weight: 700;
+    text-align: center;
+
 }
 .card {
     display: grid;
     align-items: center;
-    max-width: fit-content;
     padding: 20px;
     margin: 20px;
     gap: 20px;
     border-radius: 10px;
     border: 1px solid black;
-    grid-template-columns: 150px 300px;
+    grid-template-columns: repeat(2, minmax(75px, 1fr));
 
     > :nth-child(1){
         font-size: 20px;
@@ -84,4 +106,10 @@ h1 {
     font-size: 30px;
     font-weight: 600;
     margin: 30px;
+    text-align: center;
+}
+
+.contact-card {
+    display: flex;
+    gap: 50px;
 }

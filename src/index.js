@@ -4,14 +4,15 @@ import loadMenu from "./menu.js";
 import loadContact from "./contact.js";
 
 
-const navigationBtn = document.querySelectorAll("button");
+const navigationBar = document.querySelectorAll(".nav");
 
 function clearContent() {
-  content.textContent = "";
+    const content = document.querySelector("#content");
+    content.textContent = "";
 }
 
-navigationBtn.forEach(btn => {
-    btn.addEventListener("click", (event) => {
+navigationBar.forEach(bar => {
+    bar.addEventListener("click", (event) => {
         if (event.target.id == "home") {
             clearContent();
             loadHome();

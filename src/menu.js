@@ -5,11 +5,61 @@ import cocktailImg from "./images/golden-ember-cocktail.jpg"
 import midnightVelvetImg from "./images/midnight-velvet.jpg"
 import spritzImg from "./images/citrus-flame-spritz.jpg"
 
+let signatureMainDishes = [
+    {
+      name: "Wood-Fired Salmon",
+      price: "40 000 NGN.",
+      description: "Atlantic salmon served with roasted vegetables",
+      picture: salmonImg,
+      alt: "Wood-Fired Salmon",
+    },
+    {
+      name: "Truffle Cream Pasta",
+      price: "20 000 NGN.",
+      description: "Handmade pasta in a rich black truffle cream sauce",
+      picture: pastaImg,
+      alt: "Truffle Cream Pasta",
+    },
+    {
+      name: "Ember-Grilled Ribeye Steak",
+      price: "35 000 NGN.",
+      description: "Prime ribeye finished with garlic herb butter",
+      picture: steakImg,
+      alt: "Ember-Grilled Ribeye Steak",
+    }
+];
+
+let signatureMainDrinks = [
+    {
+      name: "Golden Ember Cocktail",
+      price: "9 500 NGN.",
+      description: "Bourbon, honey, smoked orange peel",
+      picture: cocktailImg,
+      alt: "Golden Ember Cocktail",
+    },
+    {
+      name: "Midnight Velvet",
+      price: "9 000 NGN.",
+      description: "Dark rum, chocolate bitters, and vanilla",
+      picture: midnightVelvetImg,
+      alt: "Midnight Velvet",
+    },
+    {
+      name: "Citrus Flame Spritz",
+      price: "10 500 NGN.",
+      description: "Sparkling wine with orange and grapefruit",
+      picture: spritzImg,
+      alt: "Citrus Flame Spritz",
+    }
+];
+
+
 export default function() {
     const mainContent = document.querySelector("#content");
 
     const heading = document.createElement("h1");
     heading.textContent = "Golden Ember Kitchen";
+    heading.classList.add("imperial-script-regular");
 
     const headline = document.createElement("h3");
     headline.classList.add("headline");
@@ -17,66 +67,34 @@ export default function() {
 
     const menu = document.createElement("div");
 
-// Signature Mains
+// Signature Dishes
 
     const signatureMains = document.createElement("h3");
     signatureMains.classList.add("menu-heading");
     signatureMains.textContent = "Signature Mains";
 
     const signatureMainsList = document.createElement("div");
-    const woodFiredSalmonCard = document.createElement("div");
-    woodFiredSalmonCard.classList.add("card");
-    const woodFiredSalmon = document.createElement("div");
-    const woodFiredSalmonDescription = document.createElement("div");
-    const woodFiredSalmonPrice = document.createElement("div");
-    const woodFiredSalmonImage = document.createElement("img");
-    woodFiredSalmonImage.src = salmonImg;
-    woodFiredSalmonImage.alt = "Wood-Fired Salmon";
-    woodFiredSalmon.textContent = "Wood-Fired Salmon";
-    woodFiredSalmonPrice.textContent = "40 000 NGN.";
-    woodFiredSalmonDescription.textContent = "Atlantic salmon served with roasted vegetables";
-    woodFiredSalmonCard.appendChild(woodFiredSalmon);
-    woodFiredSalmonCard.appendChild(woodFiredSalmonDescription);
-    woodFiredSalmonCard.appendChild(woodFiredSalmonPrice);
-    woodFiredSalmonCard.appendChild(woodFiredSalmonImage);
 
-    const truffleCreamPastaCard = document.createElement("div");
-    truffleCreamPastaCard.classList.add("card");
-    const truffleCreamPasta = document.createElement("div");
-    const truffleCreamPastaDescription = document.createElement("div");
-    const truffleCreamPastaPrice = document.createElement("div");
-    const truffleCreamPastaImage = document.createElement("img");
-    truffleCreamPastaImage.src = pastaImg;
-    truffleCreamPastaImage.alt = "Truffle Cream Pasta";
-    truffleCreamPasta.textContent = "Truffle Cream Pasta";
-    truffleCreamPastaPrice.textContent = "20 000 NGN.";
-    truffleCreamPastaDescription.textContent = "Handmade pasta in a rich black truffle cream sauce";
-    truffleCreamPastaCard.appendChild(truffleCreamPasta);
-    truffleCreamPastaCard.appendChild(truffleCreamPastaDescription);
-    truffleCreamPastaCard.appendChild(truffleCreamPastaPrice);
-    truffleCreamPastaCard.appendChild(truffleCreamPastaImage);
+    for (let item of signatureMainDishes) {
+        let card = document.createElement("div");
+        card.classList.add("card");
+        let dishNameField = document.createElement("div");
+        dishNameField.textContent = item.name;
+        let dishDescription = document.createElement("div");
+        dishDescription.textContent = item.description;
+        let dishPrice = document.createElement("div");
+        dishPrice.textContent = item.price;
+        let dishImage = document.createElement("img");
+        dishImage.alt = item.alt;
+        dishImage.src = item.picture;
 
+        card.appendChild(dishNameField);
+        card.appendChild(dishDescription);
+        card.appendChild(dishPrice);
+        card.appendChild(dishImage);
 
-    const emberGrilledRibeyeSteakCard = document.createElement("div");
-    emberGrilledRibeyeSteakCard.classList.add("card");
-    const emberGrilledRibeyeSteak = document.createElement("div");
-    const ribeyeSteakDescription = document.createElement("div");
-    const ribeyeSteakPrice = document.createElement("div");
-    const emberGrilledRibeyeSteakImage = document.createElement("img");
-    emberGrilledRibeyeSteakImage.src = steakImg;
-    emberGrilledRibeyeSteakImage.alt = "Ember-Grilled Ribeye Steak";
-    emberGrilledRibeyeSteak.textContent = "Ember-Grilled Ribeye Steak";
-    ribeyeSteakPrice.textContent = "35 000 NGN.";
-    ribeyeSteakDescription.textContent = "Prime ribeye finished with garlic herb butter";
-    emberGrilledRibeyeSteakCard.appendChild(emberGrilledRibeyeSteak);
-    emberGrilledRibeyeSteakCard.appendChild(ribeyeSteakDescription);
-    emberGrilledRibeyeSteakCard.appendChild(ribeyeSteakPrice);
-    emberGrilledRibeyeSteakCard.appendChild(emberGrilledRibeyeSteakImage);
-
-
-    signatureMainsList.appendChild(woodFiredSalmonCard);
-    signatureMainsList.appendChild(truffleCreamPastaCard);
-    signatureMainsList.appendChild(emberGrilledRibeyeSteakCard);
+        signatureMainsList.appendChild(card);
+    }
 
 // Signature Drinks
 
@@ -86,61 +104,26 @@ export default function() {
 
     const signatureDrinksList = document.createElement("div");
 
-    const goldenEmberCocktailCard = document.createElement("div");
-    goldenEmberCocktailCard.classList.add("card");
-    const goldenEmberCocktail = document.createElement("div");
-    const goldenEmberCocktailDescription = document.createElement("div");
-    const goldenEmberCocktailPrice = document.createElement("div");
-    const goldenEmberCocktailImage = document.createElement("img");
-    goldenEmberCocktailImage.src = cocktailImg;
-    goldenEmberCocktailImage.alt = "Golden Ember Cocktail";
-    goldenEmberCocktail.textContent = "Golden Ember Cocktail";
-    goldenEmberCocktailPrice.textContent = "9 500 NGN.";
-    goldenEmberCocktailDescription.textContent = "Bourbon, honey, smoked orange peel";
-    goldenEmberCocktailCard.appendChild(goldenEmberCocktail);
-    goldenEmberCocktailCard.appendChild(goldenEmberCocktailDescription);
-    goldenEmberCocktailCard.appendChild(goldenEmberCocktailPrice);
-    goldenEmberCocktailCard.appendChild(goldenEmberCocktailImage);
+    for (let item of signatureMainDrinks) {
+        let card = document.createElement("div");
+        card.classList.add("card");
+        let drinkNameField = document.createElement("div");
+        drinkNameField.textContent = item.name;
+        let drinkDescription = document.createElement("div");
+        drinkDescription.textContent = item.description;
+        let drinkPrice = document.createElement("div");
+        drinkPrice.textContent = item.price;
+        let drinkImage = document.createElement("img");
+        drinkImage.alt = item.alt;
+        drinkImage.src = item.picture;
 
+        card.appendChild(drinkNameField);
+        card.appendChild(drinkDescription);
+        card.appendChild(drinkPrice);
+        card.appendChild(drinkImage);
 
-    const midnightVelvetCard = document.createElement("div");
-    midnightVelvetCard.classList.add("card");
-    const midnightVelvet = document.createElement("div");
-    const midnightVelvetDescription = document.createElement("div");
-    const midnightVelvetPrice = document.createElement("div");
-    const midnightVelvetImage = document.createElement("img");
-    midnightVelvetImage.src = midnightVelvetImg;
-    midnightVelvetImage.alt = "Midnight Velvet";
-    midnightVelvet.textContent = "Midnight Velvet";
-    midnightVelvetPrice.textContent = "9 000 NGN.";
-    midnightVelvetDescription.textContent = "Dark rum, chocolate bitters, and vanilla";
-    midnightVelvetCard.appendChild(midnightVelvet);
-    midnightVelvetCard.appendChild(midnightVelvetDescription);
-    midnightVelvetCard.appendChild(midnightVelvetPrice);
-    midnightVelvetCard.appendChild(midnightVelvetImage);
-
-
-    const citrusFlameSpritzCard = document.createElement("div");
-    citrusFlameSpritzCard.classList.add("card");
-    const citrusFlameSpritz = document.createElement("div");
-    const citrusFlameSpritzDescription = document.createElement("div");
-    const citrusFlameSpritzPrice = document.createElement("div");
-    const citrusFlameSpritzImage = document.createElement("img");
-    citrusFlameSpritzImage.src = spritzImg;
-    citrusFlameSpritzImage.alt = "Citrus Flame Spritz";
-    citrusFlameSpritz.textContent = "Citrus Flame Spritz";
-    citrusFlameSpritzPrice.textContent = "10 500 NGN.";
-    citrusFlameSpritzDescription.textContent = "Sparkling wine with orange and grapefruit";
-    citrusFlameSpritzCard.appendChild(citrusFlameSpritz);
-    citrusFlameSpritzCard.appendChild(citrusFlameSpritzDescription);
-    citrusFlameSpritzCard.appendChild(citrusFlameSpritzPrice);
-    citrusFlameSpritzCard.appendChild(citrusFlameSpritzImage);
-
-
-    signatureDrinksList.appendChild(goldenEmberCocktailCard);
-    signatureDrinksList.appendChild(midnightVelvetCard);
-    signatureDrinksList.appendChild(citrusFlameSpritzCard);
-
+        signatureDrinksList.appendChild(card);
+    }
 
     menu.appendChild(signatureMains);
     menu.appendChild(signatureMainsList);
